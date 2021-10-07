@@ -34,6 +34,9 @@
                                 <state key="normal" title="Go!">
                                     <color key="titleColor" red="0.74901960779999999" green="0.20784313730000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="goButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ejh-Fx-iyY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
