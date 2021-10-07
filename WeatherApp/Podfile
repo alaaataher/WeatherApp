@@ -1,0 +1,12 @@
+
+
+platform :ios, '13.0'
+use_frameworks!
+
+target 'WeatherApp' do
+
+  # Pods for WeatherApp
+  pod 'SVProgressHUD'
+  pod 'SwiftMessageBar'
+
+end

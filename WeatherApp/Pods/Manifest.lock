@@ -1,0 +1,20 @@
+PODS:
+  - SVProgressHUD (2.2.5)
+  - SwiftMessageBar (5.6.1)
+
+DEPENDENCIES:
+  - SVProgressHUD
+  - SwiftMessageBar
+
+SPEC REPOS:
+  trunk:
+    - SVProgressHUD
+    - SwiftMessageBar
+
+SPEC CHECKSUMS:
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftMessageBar: bb93132e3cd4c8896a971df1b425a587bc5e26ae
+
+PODFILE CHECKSUM: 2cd2e85684205ec7c4d08ffbd96f4592015ab2f2
+
+COCOAPODS: 1.10.1
