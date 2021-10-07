@@ -7,10 +7,10 @@
 
 import Foundation
 enum WeatherLoaderResult {
-    case success(WeatherDto)
+    case success(WeatherItem)
     case failure(Error)
 }
 
 protocol WeatherLoader {
-    func load(completion: @escaping(WeatherLoaderResult) -> Void)
+    func load(by query: String, completion: @escaping(WeatherLoaderResult) -> Void)
 }
