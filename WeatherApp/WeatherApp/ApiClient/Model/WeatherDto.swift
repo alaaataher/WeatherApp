@@ -32,6 +32,13 @@ struct Weather : Codable {
     let icon : String?
     let id : Int?
     let main : String?
+
+    enum CodingKeys: String, CodingKey {
+        case icon = "icon"
+        case id = "id"
+        case main = "main"
+        case descriptionField = "description"
+    }
 }
 
 struct Wind : Codable {

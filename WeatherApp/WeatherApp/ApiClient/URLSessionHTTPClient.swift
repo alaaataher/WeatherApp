@@ -24,18 +24,20 @@ class URLSessionHTTPClient: HttpClient {
     }
 
     private func buildUrlRequest(_ path: String, _ urlParameters: [String: String] = [:], _ httpMethod: String = "GET") -> URLRequest {
-        let url = URL(string: self.baseUrl)!.appendingPathComponent(path)
-        var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
-        if !urlParameters.isEmpty {
-            urlComponents?.queryItems = urlParameters.map {key, value in
-                URLQueryItem(name: key,
-                             value: value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed))
+        var component:URLComponents = URLComponents()
+        component.host = baseUrl
+        component.scheme = "https"
+        component.path = path
+        urlParameters.forEach{
+            if component.queryItems == nil{
+                component.queryItems = []
             }
+            component.queryItems?.append(URLQueryItem(name: $0.key, value: $0.value))
         }
-        var request = URLRequest(url: (urlComponents?.url!)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 60.0)
-        request.httpMethod = httpMethod
-
-        return request
+        print(component.url ?? "")
+        var urlRequest = URLRequest(url:component.url!)
+        urlRequest.httpMethod = "GET"
+        return urlRequest
 
     }
 }
