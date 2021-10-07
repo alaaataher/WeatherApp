@@ -7,7 +7,7 @@
 
 import Foundation
 
-class WeatherRemoteLoader: WeatherLoader {
+class RemoteWeatherLoader: WeatherLoader {
     private let client: HttpClient
     private let path: String
     private let parameters = ["appid":"35faf519a381659c6e55f6658aad3880", "units":"imperial"]

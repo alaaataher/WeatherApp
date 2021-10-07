@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct WeatherItem {
+struct WeatherItem: Equatable {
     
     let temp: Double
     let pressure : Int

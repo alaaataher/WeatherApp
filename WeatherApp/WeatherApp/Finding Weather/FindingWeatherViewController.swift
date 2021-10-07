@@ -36,10 +36,12 @@ class FindingWeatherViewController: UIViewController {
         guard let text = searchTextField.text, !text.isEmpty else {
             return
         }
+        self.weatherInfoView.isHidden = true
         viewModel.loadWeatherInfo(with: text)
     }
 
     @IBAction func currentLocationAction(_ sender: Any) {
+        self.weatherInfoView.isHidden = true
         viewModel.getCurrentLocation()
     }
     
@@ -70,7 +72,9 @@ extension FindingWeatherViewController {
     }
 
     private func updateWeatherInfoView(_ item: WeatherItem) {
-        weatherInfoView.isHidden = false
+        UIView.animate(withDuration: 0.4) { [weak self] in
+            self?.weatherInfoView.isHidden = false
+        }
         tempValueLabel.text = "\(item.temp)"
         pressureValueLabel.text = "\(item.pressure)"
         humidityValueLabel.text = "\(item.humidity)"

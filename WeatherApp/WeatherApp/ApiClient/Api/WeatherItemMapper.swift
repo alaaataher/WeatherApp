@@ -10,7 +10,7 @@ internal class WeatherItemMapper {
     
     static func map(_ data: Data, _ response: HTTPURLResponse) -> WeatherLoaderResult {
         guard response.statusCode == 200, let dto = try? JSONDecoder().decode(WeatherDto.self, from: data) else {
-            return .failure(WeatherRemoteLoader.Error.notFound)
+            return .failure(RemoteWeatherLoader.Error.notFound)
         }
         
         let item = WeatherItem(temp: dto.main?.temp ?? 0,

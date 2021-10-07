@@ -14,7 +14,7 @@ class FindingWeatherViewModel {
     var errorMessage: ((String)->Void)?
     var weatherItem: ((WeatherItem)->Void)?
 
-    init(loader: WeatherLoader = WeatherRemoteLoader()) {
+    init(loader: WeatherLoader = RemoteWeatherLoader()) {
         self.loader = loader
         self.locationManger = LocationManger()
     }
@@ -45,7 +45,7 @@ class FindingWeatherViewModel {
     }
 
     private func configureError(with error: Error) {
-        if let err = error as? WeatherRemoteLoader.Error {
+        if let err = error as? RemoteWeatherLoader.Error {
             self.errorMessage?(err.title)
         }
     }

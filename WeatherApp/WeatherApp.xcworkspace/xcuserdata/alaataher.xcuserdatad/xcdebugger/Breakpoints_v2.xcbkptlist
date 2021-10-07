@@ -7,32 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "85D3D982-074D-40CB-A2CF-FC793E878AFA"
+            uuid = "35FEBBEC-47FC-4497-A333-666849B5387B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeatherApp/Finding Weather/FindingWeatherViewModel.swift"
+            filePath = "WeatherAppTests/URLSessionHTTPClientTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "loadWeatherInfo(with:)"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "startLoading()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4F189BAC-64D6-42C2-BD23-0C1DC52BCBCD"
+            uuid = "C29995AA-54CE-4C99-83C8-D4313FF6AE9F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeatherApp/Finding Weather/FindingWeatherViewController.swift"
+            filePath = "WeatherAppTests/URLSessionHTTPClientTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "goButtonAction(_:)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "test_getFromUrl_errorFromRequest()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
