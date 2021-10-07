@@ -16,5 +16,7 @@ used second api get current weather by lat and lon ==> api.openweathermap.org/da
 Note: the apis didn't return Chance of precipitation so i didn't show it
 
 For Story number 6: 
+
 1- I added button to get weather of current location.
+
 2- I added small animation when reload data from api
