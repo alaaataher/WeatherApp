@@ -14,5 +14,6 @@ struct WeatherItem {
     let lat : Float
     let lon : Float
     let weatherDescription: String
+    let name: String
 
 }

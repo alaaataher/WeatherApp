@@ -7,80 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0790D6FF-7049-4F28-94EE-802CBB8D477B"
+            uuid = "85D3D982-074D-40CB-A2CF-FC793E878AFA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeatherApp/ApiClient/URLSessionHTTPClient.swift"
+            filePath = "WeatherApp/Finding Weather/FindingWeatherViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "get(from:parameters:completion:)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "loadWeatherInfo(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EF31757A-53E1-454E-844C-61A181B5628C"
+            uuid = "4F189BAC-64D6-42C2-BD23-0C1DC52BCBCD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeatherApp/ApiClient/URLSessionHTTPClient.swift"
+            filePath = "WeatherApp/Finding Weather/FindingWeatherViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "get(from:parameters:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "EF31757A-53E1-454E-844C-61A181B5628C - 45688561178473bf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WeatherApp.URLSessionHTTPClient.get(from: Swift.String, parameters: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, completion: (WeatherApp.HttpClientResult) -&gt; ()) -&gt; ()"
-                  moduleName = "WeatherApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alaataher/Desktop/Apps/WeatherApp/WeatherApp/WeatherApp/ApiClient/URLSessionHTTPClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "191">
-               </Location>
-               <Location
-                  uuid = "EF31757A-53E1-454E-844C-61A181B5628C - 36084ec87d74e179"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in WeatherApp.URLSessionHTTPClient.get(from: Swift.String, parameters: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, completion: (WeatherApp.HttpClientResult) -&gt; ()) -&gt; ()"
-                  moduleName = "WeatherApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alaataher/Desktop/Apps/WeatherApp/WeatherApp/WeatherApp/ApiClient/URLSessionHTTPClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "287">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EEC76F34-75A3-494F-A0A5-D20D57B63863"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WeatherApp/ApiClient/URLSessionHTTPClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "buildUrlRequest(_:_:_:)"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "goButtonAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

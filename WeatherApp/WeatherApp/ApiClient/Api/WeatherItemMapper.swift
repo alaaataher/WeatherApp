@@ -18,7 +18,8 @@ internal class WeatherItemMapper {
                                humidity: dto.main?.humidity ?? 0,
                                lat: dto.coord?.lat ?? 0,
                                lon: dto.coord?.lon ?? 0,
-                               weatherDescription: dto.weather?.first?.descriptionField ?? "")
+                               weatherDescription: dto.weather?.first?.descriptionField ?? "",
+                               name: dto.name ?? "")
         return .success(item)
     }
 }

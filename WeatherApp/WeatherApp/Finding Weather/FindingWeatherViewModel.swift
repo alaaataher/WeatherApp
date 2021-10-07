@@ -9,24 +9,38 @@ import Foundation
 
 class FindingWeatherViewModel {
     private let loader: WeatherLoader
+    private let locationManger: LocationManger
     var isLoading: ((Bool)->Void)?
     var errorMessage: ((String)->Void)?
     var weatherItem: ((WeatherItem)->Void)?
 
     init(loader: WeatherLoader = WeatherRemoteLoader()) {
         self.loader = loader
+        self.locationManger = LocationManger()
     }
 
     func loadWeatherInfo(with query: String) {
         isLoading?(true)
         loader.load(by: query) { [weak self] (result) in
-            self?.isLoading?(false)
-            switch result {
-            case .success(let item):
-                self?.configureDataSource(with: item)
-            case .failure(let err):
-                self?.configureError(with: err)
+            self?.configureWeatherLoadResult(result)
+        }
+    }
+
+    func getCurrentLocation() {
+        locationManger.getCurrenLocation {[weak self] (lat, lon) in
+            self?.loader.load(by: lat, lon: lon) { (result) in
+                self?.configureWeatherLoadResult(result)
             }
+        }
+    }
+
+    private func configureWeatherLoadResult(_ result: WeatherLoaderResult) {
+        self.isLoading?(false)
+        switch result {
+        case .success(let item):
+            self.configureDataSource(with: item)
+        case .failure(let err):
+            self.configureError(with: err)
         }
     }
 

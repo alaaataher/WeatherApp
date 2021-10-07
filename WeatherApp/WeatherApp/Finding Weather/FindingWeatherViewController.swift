@@ -8,9 +8,11 @@
 import UIKit
 import SVProgressHUD
 import SwiftMessageBar
+import MapKit
 
 class FindingWeatherViewController: UIViewController {
 
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tempValueLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var pressureValueLabel: UILabel!
@@ -22,6 +24,7 @@ class FindingWeatherViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupBinding()
+        viewModel.getCurrentLocation()
     }
 
     private func setupView() {
@@ -30,11 +33,16 @@ class FindingWeatherViewController: UIViewController {
     }
 
     @IBAction func goButtonAction(_ sender: Any) {
-        guard let text = searchTextField.text else {
+        guard let text = searchTextField.text, !text.isEmpty else {
             return
         }
         viewModel.loadWeatherInfo(with: text)
     }
+
+    @IBAction func currentLocationAction(_ sender: Any) {
+        viewModel.getCurrentLocation()
+    }
+    
 }
 
 extension FindingWeatherViewController: UITextFieldDelegate {
@@ -55,13 +63,32 @@ extension FindingWeatherViewController {
     private func setupWeatherDataBinding() {
         viewModel.weatherItem = { [weak self] item in
             DispatchQueue.main.async {
-                self?.weatherInfoView.isHidden = false
-                self?.tempValueLabel.text = "\(item.temp)"
-                self?.pressureValueLabel.text = "\(item.pressure)"
-                self?.humidityValueLabel.text = "\(item.humidity)"
-                self?.weatherDescriptionValue.text = item.weatherDescription
+                self?.updateWeatherInfoView(item)
+                self?.updateMapView(item)
             }
         }
+    }
+
+    private func updateWeatherInfoView(_ item: WeatherItem) {
+        weatherInfoView.isHidden = false
+        tempValueLabel.text = "\(item.temp)"
+        pressureValueLabel.text = "\(item.pressure)"
+        humidityValueLabel.text = "\(item.humidity)"
+        weatherDescriptionValue.text = item.weatherDescription
+        searchTextField.text = item.name
+    }
+
+    private func updateMapView(_ item: WeatherItem) {
+        self.mapView.annotations.forEach {
+          if !($0 is MKUserLocation) {
+            self.mapView.removeAnnotation($0)
+          }
+        }
+        let annotation = MKPointAnnotation()
+        annotation.title = item.name
+        annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(item.lat) , longitude: CLLocationDegrees(item.lon))
+        self.mapView.addAnnotation(annotation)
+        self.mapView.showAnnotations(self.mapView.annotations, animated: true)
     }
 
     private func setupErrorBinding() {

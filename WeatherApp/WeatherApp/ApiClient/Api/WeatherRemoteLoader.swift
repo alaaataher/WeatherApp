@@ -10,7 +10,8 @@ import Foundation
 class WeatherRemoteLoader: WeatherLoader {
     private let client: HttpClient
     private let path: String
-    
+    private let parameters = ["appid":"35faf519a381659c6e55f6658aad3880", "units":"imperial"]
+
     enum Error: Swift.Error {
         case connectivity
         case notFound
@@ -30,15 +31,31 @@ class WeatherRemoteLoader: WeatherLoader {
         self.path = path
     }
 
-    public func load(by query: String, completion: @escaping(WeatherLoaderResult)->Void) {
-        let parameters = ["q": query, "appid":"35faf519a381659c6e55f6658aad3880", "units":"imperial"]
+     func load(by query: String, completion: @escaping(WeatherLoaderResult)->Void) {
+        var parameters = self.parameters
+        parameters["q"] = query
         client.get(from: path, parameters: parameters) { [weak self] result in
-            guard let _ = self else {return}
-            switch result {
-            case .success(let data, let urlResponse):
-                completion(WeatherItemMapper.map(data, urlResponse))
-            case .failure: completion(.failure(Error.connectivity))
-            }
+            guard let self = self else {return}
+            completion(self.configureHttpClientResult(result: result))
+        }
+    }
+
+    func load(by lat: Double, lon: Double, completion: @escaping (WeatherLoaderResult) -> Void) {
+        var parameters = self.parameters
+        parameters["lat"] = "\(lat)"
+        parameters["lon"] = "\(lon)"
+        client.get(from: path, parameters: parameters) { [weak self] result in
+            guard let self = self else {return}
+            completion(self.configureHttpClientResult(result: result))
+        }
+    }
+
+    private func configureHttpClientResult(result: HttpClientResult) -> WeatherLoaderResult{
+        switch result {
+        case .success(let data, let urlResponse):
+            return WeatherItemMapper.map(data, urlResponse)
+        case .failure:
+            return .failure(Error.connectivity)
         }
     }
 }

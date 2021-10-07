@@ -13,4 +13,5 @@ enum WeatherLoaderResult {
 
 protocol WeatherLoader {
     func load(by query: String, completion: @escaping(WeatherLoaderResult) -> Void)
+    func load(by lat: Double, lon: Double, completion: @escaping(WeatherLoaderResult) -> Void)
 }

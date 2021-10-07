@@ -23,6 +23,7 @@
 		A0AB703B270EFAAC000EB445 /* WeatherLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AB703A270EFAAC000EB445 /* WeatherLoader.swift */; };
 		A0AB7040270F052A000EB445 /* WeatherItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AB703F270F052A000EB445 /* WeatherItem.swift */; };
 		A0AB7046270F0600000EB445 /* WeatherItemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AB7045270F0600000EB445 /* WeatherItemMapper.swift */; };
+		A0AB704F270F3AF3000EB445 /* LocationManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AB704E270F3AF3000EB445 /* LocationManger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		A0AB703A270EFAAC000EB445 /* WeatherLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherLoader.swift; sourceTree = "<group>"; };
 		A0AB703F270F052A000EB445 /* WeatherItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItem.swift; sourceTree = "<group>"; };
 		A0AB7045270F0600000EB445 /* WeatherItemMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItemMapper.swift; sourceTree = "<group>"; };
+		A0AB704E270F3AF3000EB445 /* LocationManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManger.swift; sourceTree = "<group>"; };
 		D0E405C002501A773040CDA6 /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 			children = (
 				A0AB6FFB270EE616000EB445 /* Finding Weather */,
 				A0AB700F270EECDE000EB445 /* ApiClient */,
+				A0AB704D270F3ADD000EB445 /* Utils */,
 				A0AB6FBC270EE079000EB445 /* AppDelegate.swift */,
 				A0AB6FC2270EE079000EB445 /* Main.storyboard */,
 				A0AB6FC5270EE07B000EB445 /* Assets.xcassets */,
@@ -186,6 +189,14 @@
 				A0AB7045270F0600000EB445 /* WeatherItemMapper.swift */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		A0AB704D270F3ADD000EB445 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A0AB704E270F3AF3000EB445 /* LocationManger.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		CAFC12952F0EACDBAD01AB04 /* Pods */ = {
@@ -383,6 +394,7 @@
 				A0AB7023270EEF67000EB445 /* WeatherDto.swift in Sources */,
 				A0AB6FBD270EE079000EB445 /* AppDelegate.swift in Sources */,
 				A0AB7028270EF1E8000EB445 /* URLSessionHTTPClient.swift in Sources */,
+				A0AB704F270F3AF3000EB445 /* LocationManger.swift in Sources */,
 				A0AB7008270EE680000EB445 /* FindingWeatherViewModel.swift in Sources */,
 				A0AB6FFD270EE641000EB445 /* FindingWeatherViewController.swift in Sources */,
 				A0AB7046270F0600000EB445 /* WeatherItemMapper.swift in Sources */,
